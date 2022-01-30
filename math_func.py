@@ -6,7 +6,6 @@ global a,b
 a=0
 b=0
 
-
 @math_func.route('/')
 def index():
     return('To access math functions type / add mul sub or div at the end of the url')
