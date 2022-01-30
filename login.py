@@ -7,3 +7,4 @@ def func():
     name=request.args['name']
     age=request.args['age']
     return (f'{name}, you are now logged in at {age} years')
+    
