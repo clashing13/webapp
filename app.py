@@ -1,4 +1,4 @@
-from flask import Flask 
+from flask import Flask, render_template
 from login import login
 from math_func import math_func
 
@@ -9,5 +9,5 @@ app.register_blueprint(math_func, url_prefix='/math')
 
 @app.route('/')
 def index():
-    return 'welcome to web app Tarun'
+    return render_template("app.html")
     
