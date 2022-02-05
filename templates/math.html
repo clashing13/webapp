@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Math</title>
+   </head>
+   <body>
+      <header>
+         <div class="container">
+            <h1 class="logo">Math Home Page</h1>
+            <br>
+            Please enter the two numbers for the math operations:
+            <br>
+            <form action="" method="get">
+                First Number:<br>
+                <input type="text" name="a" value={{pg_a}}>
+                <br>
+                Second Number:<br>
+                <input type="text" name="b" value={{pg_b}}>
+                <br><br>
+  
+                <button type="submit" formaction="{{ url_for('math_func.add') }}">Add</button>
+          
+                <button type="submit" formaction="{{ url_for('math_func.sub') }}">Subtract</button>
+                
+                <button type="submit" formaction="{{url_for('math_func.mul') }}">Multiply</button>
+                
+                <button type="submit" formaction="{{url_for('math_func.div') }}">Divide</button>
+                <br><br>
+                {% if pg_error: %}
+                    <h3>Invalid Input</h3>
+                {% else: %}
+                    <h3>The {{pg_text}} of {{pg_a}} and {{pg_b}} is {{pg_result}}</h3>
+                {% endif %}
+            </form>
+         </div>
+      </header>
+      {% block content %}
+      {% endblock %}      <!--<p> hello there</p>-->
+   </body>
+</html>
