@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+        <meta charset="utf-8">
+        <title>Welcome to TicTacToe</title>
+   </head>
+   <body>
+        <h1> This is a two player game. Each player plays alternatively. Player 1 will start first</h1>
+        
+        <table>
+            <tr>
+                <td>
+                    <form action="{{ url_for('tictactoe.play') }}" method="get">
+                            <input type="hidden" name="player" value="{{player}}">
+                            <input type="hidden" name="button" value="b1">
+                            {% if buttons['b1'] or winner: %} 
+                                <input type="submit" value="{{buttons['b1']}}" style="height:100px; width:100px" disabled>
+                            {% else: %}
+                                <input type="submit" value="{{buttons['b1']}}" style="height:100px; width:100px">
+                            {% endif %}
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ url_for('tictactoe.play') }}" method="get">
+                            <input type="hidden" name="player" value="{{player}}">
+                            <input type="hidden" name="button" value="b2">
+                            {% if buttons['b2'] or winner: %} 
+                                <input type="submit" value="{{buttons['b2']}}" style="height:100px; width:100px" disabled>
+                            {% else: %}
+                                <input type="submit" value="{{buttons['b2']}}" style="height:100px; width:100px">
+                            {% endif %}
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ url_for('tictactoe.play') }}" method="get">
+                            <input type="hidden" name="player" value="{{player}}">
+                            <input type="hidden" name="button" value="b3">
+                            {% if buttons['b3'] or winner: %} 
+                                <input type="submit" value="{{buttons['b3']}}" style="height:100px; width:100px" disabled>
+                            {% else: %}
+                                <input type="submit" value="{{buttons['b3']}}" style="height:100px; width:100px">
+                            {% endif %}
+                        </form>
+                </tr>
+                <tr>
+                    <td>
+                        <form action="{{ url_for('tictactoe.play') }}" method="get">
+                            <input type="hidden" name="player" value="{{player}}">
+                            <input type="hidden" name="button" value="b4">
+                            {% if buttons['b4'] or winner: %} 
+                                <input type="submit" value="{{buttons['b4']}}" style="height:100px; width:100px" disabled>
+                            {% else: %}
+                                <input type="submit" value="{{buttons['b4']}}" style="height:100px; width:100px">
+                            {% endif %}
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ url_for('tictactoe.play') }}" method="get">
+                            <input type="hidden" name="player" value="{{player}}">
+                            <input type="hidden" name="button" value="b5">
+                            {% if buttons['b5'] or winner: %} 
+                                <input type="submit" value="{{buttons['b5']}}" style="height:100px; width:100px" disabled>
+                            {% else: %}
+                                <input type="submit" value="{{buttons['b5']}}" style="height:100px; width:100px">
+                            {% endif %}
+
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ url_for('tictactoe.play') }}" method="get">
+                            <input type="hidden" name="player" value="{{player}}">
+                            <input type="hidden" name="button" value="b6">
+                            {% if buttons['b6'] or winner: %} 
+                                <input type="submit" value="{{buttons['b6']}}" style="height:100px; width:100px" disabled>
+                            {% else: %}
+                                <input type="submit" value="{{buttons['b6']}}" style="height:100px; width:100px">
+                            {% endif %}
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <form action="{{ url_for('tictactoe.play') }}" method="get">
+                            <input type="hidden" name="player" value="{{player}}">
+                            <input type="hidden" name="button" value="b7">
+                            {% if buttons['b7'] or winner: %} 
+                                <input type="submit" value="{{buttons['b7']}}" style="height:100px; width:100px" disabled>
+                            {% else: %}
+                                <input type="submit" value="{{buttons['b7']}}" style="height:100px; width:100px">
+                            {% endif %}
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ url_for('tictactoe.play') }}" method="get">
+                            <input type="hidden" name="player" value="{{player}}">
+                            <input type="hidden" name="button" value="b8">
+                            {% if buttons['b8'] or winner: %} 
+                                <input type="submit" value="{{buttons['b8']}}" style="height:100px; width:100px" disabled>
+                            {% else: %}
+                                <input type="submit" value="{{buttons['b8']}}" style="height:100px; width:100px">
+                            {% endif %}
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ url_for('tictactoe.play') }}" method="get">
+                            <input type="hidden" name="player" value="{{player}}">
+                            <input type="hidden" name="button" value="b9">
+                            {% if buttons['b9'] or winner: %} 
+                                <input type="submit" value="{{buttons['b9']}}" style="height:100px; width:100px" disabled>
+                            {% else: %}
+                                <input type="submit" value="{{buttons['b9']}}" style="height:100px; width:100px">
+                            {% endif %}
+                        </form>
+                    </td>
+            </tr>
+        </table>
+            
+        <br><br>
+        Now Playing: <b>Player {{player}}</b>
+                
+        <br><br>
+        Winner is: <b> {{winner}}</b> <a href={{ url_for('tictactoe.index') }}><button>Reset</button></a>
+    </body>
+</html>
+    
+            
